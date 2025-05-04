@@ -28,8 +28,8 @@
 3. Импортируйте модули в вашем Python-скрипте или Jupyter Notebook:
 
    ```python
-   from ulysses import load_chapter_text, find_word_context
-   from tf_idf import TFIDF
+   from ulyanov_11.ulysses import load_chapter_text, word_frequency, find_word_context
+   from ulyanov_11.tf_idf import TfIdfCalculator
    ```
 
 4. Пример использования:
