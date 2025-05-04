@@ -34,21 +34,24 @@
 
 4. Пример использования:
 
-   ```python
-   # Загрузка текста главы
-   url = 'https://www.gutenberg.org/files/4300/4300-h/4300-h.htm'
-   chapter_text = load_chapter_text(url, chapter_id='chap01')
+   # Пример работы с ulysses.py
+url = 'https://www.gutenberg.org/files/4300/4300-h/4300-h.htm'
+chapter_text = load_chapter_text(url)
+freq = word_frequency(chapter_text)
+print(freq.most_common(10))
+find_word_context(chapter_text, 'ulysses', 5, 5, cut_length=True)
 
-   # Поиск слова в контексте
-   find_word_context(chapter_text, word='ulysses', left_context=5, right_context=5, cut_length=True)
-
-   # Работа с TF-IDF
-   docs = ["This is the first doc.", "This is the second doc."]
-   tfidf = TFIDF(docs)
-   print(tfidf.get_tf('this', 0))
-   print(tfidf.get_idf('this', 0))
-   print(tfidf.get_tf_idf('this', 0))
-   ```
+# Пример работы с tf_idf.py
+docs = [
+    "This is the first document.",
+    "This document is the second document.",
+    "And this is the third one.",
+    "Is this the first document?"
+]
+tfidf = TfIdfCalculator(docs)
+print(tfidf.get_tf('document', 1))
+print(tfidf.get_idf('document', 1))
+print(tfidf.get_tf_idf('document', 1))
 
 ## Примечания
 
