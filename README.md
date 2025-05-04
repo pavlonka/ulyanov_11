@@ -35,13 +35,16 @@
 4. Пример использования:
 
    # Пример работы с ulysses.py
+```python
 url = 'https://www.gutenberg.org/files/4300/4300-h/4300-h.htm'
 chapter_text = load_chapter_text(url)
 freq = word_frequency(chapter_text)
 print(freq.most_common(10))
 find_word_context(chapter_text, 'ulysses', 5, 5, cut_length=True)
+```
 
 # Пример работы с tf_idf.py
+```python
 docs = [
     "This is the first document.",
     "This document is the second document.",
@@ -52,6 +55,7 @@ tfidf = TfIdfCalculator(docs)
 print(tfidf.get_tf('document', 1))
 print(tfidf.get_idf('document', 1))
 print(tfidf.get_tf_idf('document', 1))
+```
 
 ## Примечания
 
